@@ -132,19 +132,25 @@ function changeColor(){
 }
 btn.addEventListener('click',changeColor)
 
-let button = document.querySelector('.button')
-let body = document.querySelector('body')
-button.addEventListener('click',()=>{
+// let button = document.querySelector('.button')
+let body = document.querySelector('body');
+let img = document.querySelector('img');
+let sunImg = './assets/sun-light.svg';
+let moonImg = './assets/moon-fill.svg';
+
+img.addEventListener('click',()=>{
     // body.backgroundColor = 'black'
     // body.color = 'red'
     let bodyClass = body.classList.contains('dark')
     if( bodyClass){
         body.classList.remove('dark')
-        button.innerText = 'dark mode'
-
+        // button.innerText = 'dark mode'
+        img.setAttribute('src',sunImg)
+        
         
     }else{
-        button.innerText = 'light mode'
+        // button.innerText = 'light mode'
+        img.setAttribute('src',moonImg)
 
         body.classList.add('dark')
     }
